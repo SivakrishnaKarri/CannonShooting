@@ -6,19 +6,25 @@ using System;
 
 public class Shooting : MonoBehaviour
 {
-    public static Action<bool> ShootingStarted;
+   
     public Rigidbody CanonBullet;
     public GameObject BulletSpawnPosition;
     public int speed = 70;
     public float delay = 1.0f;
-    
+    public AudioSource audioSource;
+    public AudioClip gunSound;
 
+         void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            ShootingStarted?.Invoke(true);
+            audioSource.PlayOneShot(gunSound,1.0f);
+           
             Rigidbody clone;
            // clone = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
             clone = Instantiate(CanonBullet, BulletSpawnPosition.transform.position,Quaternion.identity) as Rigidbody;
@@ -33,7 +39,7 @@ public class Shooting : MonoBehaviour
      IEnumerator DestroyAfterDelay(GameObject bullet,float delay)
     {
         yield return new WaitForSeconds(delay);
-        ShootingStarted?.Invoke(false);
+        CameraDelay.ShootingStarted?.Invoke(false);
         Destroy(bullet);
     }
 

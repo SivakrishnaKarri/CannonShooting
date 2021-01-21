@@ -7,12 +7,12 @@ public class CameraControl : MonoBehaviour
     public Camera MainCamera;
     private void Awake()
     {
-        Shooting.ShootingStarted += ShootingStarted;
+        CameraDelay.ShootingStarted += ShootingStarted;
     }
 
     private void OnDestroy()
     {
-        Shooting.ShootingStarted -= ShootingStarted;
+        CameraDelay.ShootingStarted -= ShootingStarted;
     }
     // Start is called before the first frame update
     void Start()
