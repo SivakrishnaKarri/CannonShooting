@@ -10,6 +10,7 @@ public class BarrelControl : MonoBehaviour
     public Button DownArrowBtn;
     public Button LeftArrowBtn;
     public Button RightArrowBtn;
+    public int AngleOffset = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,34 +54,44 @@ public class BarrelControl : MonoBehaviour
         {
             Debug.Log("Down arrow was pressed.");
             VerticalDownMovement();
-
-
         }
 
-       
+       // Barrel.transform.rotation = Mathf.Clamp(Barrel.transform.rotation.y, - 30,30);
+
+
     }
+
+
     public void HorizontalRightMovement()
     {
-        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
-                                                      Barrel.transform.eulerAngles.y + 10,
-                                                      Barrel.transform.eulerAngles.z);
+      //  if ((Barrel.transform.localEulerAngles.y <= 30.0f)&&(Barrel.transform.localEulerAngles.y>=-30.0f))
+       // {
+            Debug.LogError(Barrel.transform.rotation.y);
+            Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
+                                                          Barrel.transform.eulerAngles.y + AngleOffset,
+                                                          Barrel.transform.eulerAngles.z);
+        
+        //}
     }
     public void HorizontalLeftMovement()
     {
-        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
-                                                      Barrel.transform.eulerAngles.y - 10,
+       // if ((Barrel.transform.localEulerAngles.y <= 30.0f) && (Barrel.transform.localEulerAngles.y >= -30.0f))
+       // { 
+            Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
+                                                      Barrel.transform.eulerAngles.y - AngleOffset,
                                                       Barrel.transform.eulerAngles.z);
+      //  }
     }
     public void VerticalUpMovement()
     {
-        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x + 10,
+        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                       Barrel.transform.eulerAngles.y,
-                                                      Barrel.transform.eulerAngles.z);
+                                                      Barrel.transform.eulerAngles.z+ AngleOffset);
     }
     public void VerticalDownMovement()
     {
-        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x - 10,
+        Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                       Barrel.transform.eulerAngles.y,
-                                                      Barrel.transform.eulerAngles.z);
+                                                      Barrel.transform.eulerAngles.z- AngleOffset);
     }
 }

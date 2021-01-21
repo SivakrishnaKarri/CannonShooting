@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+    public GameObject FireworksAll;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,14 @@ public class DetectCollision : MonoBehaviour
         if(other.gameObject.tag == "Ground")
         {
             Debug.Log("Collided");
+            GameObject firework = Instantiate(FireworksAll, transform.position, Quaternion.identity);
+            firework.GetComponent<ParticleSystem>().Play();
+        }
+        if (other.gameObject.tag == "Target")
+        {
+            Debug.Log("Target Hit");
+            GameObject firework = Instantiate(FireworksAll, transform.position, Quaternion.identity);
+            firework.GetComponent<ParticleSystem>().Play();
         }
     }
 

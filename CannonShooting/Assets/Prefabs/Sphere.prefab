@@ -226,3 +226,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c0eb90ee4ac154d8fa046192273c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireworksAll: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
