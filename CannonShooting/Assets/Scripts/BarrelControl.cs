@@ -29,55 +29,41 @@ public class BarrelControl : MonoBehaviour
   
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Debug.Log("Right arrow was pressed.");
+        if ((Input.GetKeyDown(KeyCode.RightArrow))|| (Input.GetKeyDown(KeyCode.D)))
+        {         
             HorizontalRightMovement();
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Debug.Log("Right arrow was pressed.");
+        if ((Input.GetKeyDown(KeyCode.LeftArrow)) || (Input.GetKeyDown(KeyCode.A)))
+        {           
             HorizontalLeftMovement();
 
 
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Debug.Log("Up arrow was pressed.");
+        if ((Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.W)))
+        {           
             VerticalUpMovement();
 
 
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Debug.Log("Down arrow was pressed.");
+        if ((Input.GetKeyDown(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.S)))
+        {           
             VerticalDownMovement();
         }
-
-       // Barrel.transform.rotation = Mathf.Clamp(Barrel.transform.rotation.y, - 30,30);
-
-
     }
 
     
     private void HorizontalRightMovement()
     {
-      //  if ((Barrel.transform.localEulerAngles.y <= 30.0f)&&(Barrel.transform.localEulerAngles.y>=-30.0f))
-       // {
             Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                           Barrel.transform.eulerAngles.y + AngleOffset,
                                                           Barrel.transform.eulerAngles.z);
-        
-        //}
+            
     }
     private void HorizontalLeftMovement()
-    {
-       // if ((Barrel.transform.localEulerAngles.y <= 30.0f) && (Barrel.transform.localEulerAngles.y >= -30.0f))
-       // { 
+    {    
             Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                       Barrel.transform.eulerAngles.y - AngleOffset,
-                                                      Barrel.transform.eulerAngles.z);
-      //  }
+                                                      Barrel.transform.eulerAngles.z);     
     }
     private void VerticalUpMovement()
     {

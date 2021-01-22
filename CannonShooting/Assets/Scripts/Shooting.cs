@@ -37,7 +37,6 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Coming");
             FireStart();
         }
         
@@ -59,7 +58,8 @@ public class Shooting : MonoBehaviour
         yield return new WaitForSeconds(delay);
         CameraDelay.ShootingStarted?.Invoke(false);
         float Distance = Vector3.Distance(bulletSpawnPosition.transform.position,bullet.transform.position);
-        distanceText.text = "Distance Covered  :" + Distance;
+        int d = (int)Distance;
+        distanceText.text = "Distance Covered  : " + d+" Meters";
         Destroy(bullet);
     }
     public void TargetHit(bool success)
