@@ -37,6 +37,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Coming");
             FireStart();
         }
         

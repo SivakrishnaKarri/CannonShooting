@@ -59,7 +59,7 @@ public class BarrelControl : MonoBehaviour
 
     }
 
-
+    
     private void HorizontalRightMovement()
     {
       //  if ((Barrel.transform.localEulerAngles.y <= 30.0f)&&(Barrel.transform.localEulerAngles.y>=-30.0f))
