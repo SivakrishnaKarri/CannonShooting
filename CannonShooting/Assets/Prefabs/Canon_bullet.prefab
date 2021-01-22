@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2225262693312085494}
   - component: {fileID: 2225262693312085496}
   m_Layer: 0
-  m_Name: Canon_bullet_New
+  m_Name: Canon_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7688562719820981782}
   - component: {fileID: 3961235447319105015}
-  - component: {fileID: 3278495657187053761}
   - component: {fileID: 300213290863398084}
   - component: {fileID: 425761755293715485}
   m_Layer: 0
@@ -204,14 +203,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3278495657187053761
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5811402802866325249}
-  m_Enabled: 1
 --- !u!54 &300213290863398084
 Rigidbody:
   m_ObjectHideFlags: 0

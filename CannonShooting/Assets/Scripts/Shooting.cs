@@ -35,11 +35,11 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-      /*  if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             FireStart();
         }
-        */
+        
     }
 
     public void FireStart()
@@ -65,11 +65,11 @@ public class Shooting : MonoBehaviour
     {
         if(success)
         {
-            resultText.text = "Success";
+            resultText.text = "Success..";
         }
         else
         {
-            resultText.text = "Failed! Better luck next time....";
+            resultText.text = "Failed..! Better luck next time....";
         }
         resultPanel.SetActive(true);
         StartCoroutine(DisappearText());

@@ -83,12 +83,12 @@ public class BarrelControl : MonoBehaviour
     {
         Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                       Barrel.transform.eulerAngles.y,
-                                                      Barrel.transform.eulerAngles.z+ AngleOffset);
+                                                      Barrel.transform.eulerAngles.z- AngleOffset);
     }
     private void VerticalDownMovement()
     {
         Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                       Barrel.transform.eulerAngles.y,
-                                                      Barrel.transform.eulerAngles.z- AngleOffset);
+                                                      Barrel.transform.eulerAngles.z+ AngleOffset);
     }
 }
