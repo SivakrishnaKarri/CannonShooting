@@ -66,7 +66,6 @@ public class BarrelControl : MonoBehaviour
     {
       //  if ((Barrel.transform.localEulerAngles.y <= 30.0f)&&(Barrel.transform.localEulerAngles.y>=-30.0f))
        // {
-            Debug.LogError(Barrel.transform.rotation.y);
             Barrel.transform.eulerAngles = new Vector3(Barrel.transform.eulerAngles.x,
                                                           Barrel.transform.eulerAngles.y + AngleOffset,
                                                           Barrel.transform.eulerAngles.z);
